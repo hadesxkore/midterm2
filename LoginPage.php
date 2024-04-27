@@ -91,8 +91,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .form-image {
             width: 50%;
-            height: 250px;
+            margin-left: 20px;
+            height: 370px;
             border-left: 1px solid #ffffff; /* Add vertical line */
+            
+        }
+        .form-image2 {
+            width: 25%; /* Adjust logo size */
+            height: auto;
+            position: absolute; /* Position absolute for custom positioning */
+            top: -45px; /* Adjust logo top position */
+            left: 27%; /* Center logo horizontally */
+            transform: translateX(-50%);
         }
 
         .glow-on-hover {
@@ -104,11 +114,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-shadow: 0 0 40px rgba(65, 105, 225, 0.8);
         }
 
-        .logo2{
+        .logo2 {
             width: 15%;
             height: auto;
             position: absolute;
-            top: -220px;
+            top: -60px; /* Adjust logo position */
             left: 50%;
             transform: translateX(-50%);
             z-index: 9999;
@@ -148,26 +158,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .popup {
-    position: fixed;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    display: flex;
-    flex-direction: column; /* Adjust the button alignment */
-    align-items: center; /* Center items horizontally */
-}
+            position: fixed;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column; /* Adjust the button alignment */
+            align-items: center; /* Center items horizontally */
+        }
 
         .close {
             position: absolute;
             top: 5px;
             right: 5px;
             cursor: pointer;
-            
         }
 
         /* Button style */
@@ -181,6 +190,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-size: 16px;
             margin-top: 10px;
             transition: background-color 0.3s ease;
+            align-self: center; /* Center the button horizontally */
         }
 
         button:hover {
@@ -194,7 +204,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-align: center;
             justify-content: center;
         }
-        
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .form-container {
@@ -212,16 +222,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             .logo2 {
-                top: -50px;
+                top: -40px; /* Adjust logo position */
             }
         }
     </style>
 </head>
 <body class="h-screen relative">
-    <img src="images/logo2.png" alt="Company Logo" class="logo2">
+ 
     <div class="bg-white p-8 rounded-md shadow-md w-full form-container mt-16">
+    <img src="images/logo2.png" alt="Company Logo" class="form-image2 absolute">
         <div class="form-content">
-            <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Welcome Back!</h2>
+            <h2 class="text-3xl font-bold mb-4 mt-6 text-center text-blue-600">Welcome Back!</h2>
             <form id="loginForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <div class="mb-6">
                     <label for="username" class="block text-sm font-medium text-gray-300">Username</label>
@@ -234,7 +245,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg w-full hover:bg-blue-600 focus:outline-none glow-on-hover">Login</button>
             </form>
         </div>
-        <img src="images/Picture3.png" alt="Form Image" class="form-image">
+        <img src="images/Login.png" alt="Form Image" class="form-image">
     </div>
 
     <!-- Overlay and Popup for Error Message -->
