@@ -290,6 +290,52 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     margin-right: 30px;
     margin-top: 50px;
 }
+     /* Modal styles */
+     .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .modal-content button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-content button:hover {
+            background-color:#FF7377;
+        }
+
 
     </style>
 </head>
@@ -304,39 +350,48 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <div class="navbar-section">
             <a href="#" class="navbar-brand">Capstone Description</a>
         </div>
-        <!-- Mobile Menu Button -->
-        <button class="block lg:hidden focus:outline-none mobile-menu-button" id="mobile-menu-button">
-            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-        <!-- Dropdown Menu -->
-        <div class="hidden lg:flex lg:items-center space-x-4 navbar-links">
-            <div class="navbar-section">
-                <a href="AdminPage.php">Admin Page</a>
-                <a href="Capstone.php">Capstone Description</a>
-                <a href="Members.php">Members</a>
-                <a href="Capabs.php">System Capabilities</a>
-            </div>
-            <div class="navbar-section">
-                <a href="AdminPage.php?logout=true" class="logout-button">Logout</a>
+       <!-- Mobile Menu Button -->
+       <button class="block lg:hidden focus:outline-none mobile-menu-button" id="mobile-menu-button">
+                <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Dropdown Menu -->
+            <div class="hidden lg:flex lg:items-center space-x-4 navbar-links">
+                <div class="navbar-section">
+                    <a href="AdminPage.php">Admin Page</a>
+                    <a href="Capstone.php">Capstone Description</a>
+                    <a href="Members.php">Members</a>
+                    <a href="Capabs.php">System Capabilities</a>
+                </div>
+                <div class="navbar-section">
+                    <a href="#" class="logout-button" onclick="openModal()">Logout</a>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Dropdown Menu for Mobile -->
-    <div class="lg:hidden absolute top-0 left-0 w-full bg-gray-800 mobile-dropdown" id="mobile-dropdown" style="display: none;">
-        <div class="container mx-auto py-4">
-            <a href="AdminPage.php" class="dropdown-item">Admin Page</a>
-            <a href="Capstone.php" class="dropdown-item">Capstone Description</a>
-            <a href="Members.php" class="dropdown-item">Members</a>
-            <a href="Capabs.php" class="dropdown-item">System Capabilities</a>
-            <a href="AdminPage.php?logout=true" class="dropdown-item">Logout</a>
-            <svg class="w-6 h-6 text-white close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="close-icon">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
+        <!-- Dropdown Menu for Mobile -->
+        <div class="lg:hidden absolute top-0 left-0 w-full bg-gray-800 mobile-dropdown" id="mobile-dropdown" style="display: none;">
+            <div class="container mx-auto py-4">
+                <a href="AdminPage.php" class="dropdown-item">Admin Page</a>
+                <a href="Capstone.php" class="dropdown-item">Capstone Description</a>
+                <a href="Members.php" class="dropdown-item">Members</a>
+                <a href="Capabs.php" class="dropdown-item">System Capabilities</a>
+                <a href="#" class="dropdown-item" onclick="openModal()">Logout</a>
+                <svg class="w-6 h-6 text-white close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="close-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </div>
+        </div>
+    </nav>
+ <!-- Logout Confirmation Modal -->
+ <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Are you sure you want to logout?</p>
+            <button onclick="logout()">Yes</button>
+            <button onclick="closeModal()">Cancel</button>
         </div>
     </div>
-</nav>
 
 
     <!-- Content -->
@@ -500,6 +555,24 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         setInterval(() => {
             moveSlide(1);
         }, 3000);
+        
+        // Function to open the modal
+        function openModal() {
+            var modal = document.getElementById("logoutModal");
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById("logoutModal");
+            modal.style.display = "none";
+        }
+
+        // Function to logout
+        function logout() {
+            window.location.href = 'LoginPage.php?logout=true';
+        }
     </script>
+
 </body>
 </html>
