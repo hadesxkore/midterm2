@@ -1,3 +1,23 @@
+<?php
+// Start session
+session_start();
+
+// Check if logout query parameter is set
+if (isset($_GET["logout"]) && $_GET["logout"] === "true") {
+    // Destroy the session
+    session_destroy();
+
+    // Redirect to login page after logout
+    header("Location: LoginPage.php");
+    exit;
+}
+
+// Check if user is not logged in, redirect to LoginError if not logged in
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("Location: LoginError.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
