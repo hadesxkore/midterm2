@@ -29,7 +29,7 @@
             <!-- Custom Styles -->
             <style>
                 body {
-                    background-color: #252640; /* Light background */
+                    background-color: #1a202c;
                     font-family: 'Roboto', sans-serif; /* Change font for modern look */
                     color: #ffffff; /* White text color */
                 }
@@ -53,7 +53,7 @@
 
                 /* Dark mode styles */
                 .dark-mode {
-                    background-color: #252640;
+                    background-color: #1a202c;
                 }
 
                 .dark-mode .navbar {
@@ -302,11 +302,13 @@
     width: 70%; /* Set card width to fill the container */
     margin-left: 100px;
     margin-top: 50px;
-    color: black;
+    color: whitesmoke;
     margin-bottom: 20px; /* Add some bottom margin between cards */
-    background-color: #ffffff; /* White background color */
+    background-color: #252640;;
+    border: 2px solid #0BC4D9;  
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
 }
+
 
 .team-card:hover {
     transform: translateY(-2px); /* Add slight elevation on hover */
@@ -459,12 +461,12 @@
     </div>
     <div class="p-4">
         <div class="flex items-center justify-center mb-2">
-            <img src="images/user.png" alt="Address Icon" class="w-6 h-6 mr-2">
+            <img src="images/user2.png" alt="Address Icon" class="w-6 h-6 mr-2">
             <h3 class="text-xl font-semibold">Allyza Diane J. Perillo</h3>
         </div>
         <div class="flex items-center justify-center mb-4">
-            <img src="images/address.png" alt="User Icon" class="w-6 h-6 mr-2">
-            <p class="text-sm text-gray-600">Address: Daang Bago Dinalupihan, Bataan</p>
+            <img src="images/address2.png" alt="User Icon" class="w-6 h-6 mr-2">
+            <p class="text-sm text-white-600">Address: Daang Bago Dinalupihan, Bataan</p>
         </div>
         <button class="block w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none" onclick="showModal('Allyza')">See More</button>
     </div>
@@ -492,14 +494,15 @@
     </div>
     <div class="p-4">
         <div class="flex items-center justify-center mb-2">
-            <img src="images/user.png" alt="Address Icon" class="w-6 h-6 mr-2">
+            <img src="images/user2.png" alt="Address Icon" class="w-6 h-6 mr-2">
             <h3 class="text-xl font-semibold">Jarielle L. Ramos</h3>
         </div>
         <div class="flex items-center justify-center mb-4">
-            <img src="images/address.png" alt="User Icon" class="w-6 h-6 mr-2">
-            <p class="text-sm text-gray-600">150 Masinop St Cupang West Balanga City Bataan
+            <img src="images/address2.png" alt="User Icon" class="w-6 h-6 mr-2">
+            <p class="text-sm text-white-600">Address: 150 Masinop St Cupang West Balanga City Bataan
 </p>
         </div>
+       
         <button class="block w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none" onclick="showModal('Jarielle')">See More</button>
     </div>
     <!-- Additional Information (Hidden by default) -->
@@ -526,12 +529,12 @@
     </div>
     <div class="p-4">
         <div class="flex items-center justify-center mb-2">
-            <img src="images/user.png" alt="Address Icon" class="w-6 h-6 mr-2">
+            <img src="images/user2.png" alt="Address Icon" class="w-6 h-6 mr-2">
             <h3 class="text-xl font-semibold">Ahldrex Jefferson M. Reyes</h3>
         </div>
         <div class="flex items-center justify-center mb-4">
-            <img src="images/address.png" alt="User Icon" class="w-6 h-6 mr-2">
-            <p class="text-sm text-gray-600">Address: 017 Macopa Street Landing Limay Bataan</p>
+            <img src="images/address2.png" alt="User Icon" class="w-6 h-6 mr-2">
+            <p class="text-sm text-white-600">Address: 017 Macopa Street Landing Limay Bataan</p>
         </div>
         <button class="block w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none" onclick="showModal('Ahldrex')">See More</button>
     </div>
@@ -559,12 +562,12 @@
     </div>
     <div class="p-4">
         <div class="flex items-center justify-center mb-2">
-            <img src="images/user.png" alt="Address Icon" class="w-6 h-6 mr-2">
+            <img src="images/user2.png" alt="Address Icon" class="w-6 h-6 mr-2">
             <h3 class="text-xl font-semibold">Kobie O. Villanueva</h3>
         </div>
         <div class="flex items-center justify-center mb-4">
-            <img src="images/address.png" alt="User Icon" class="w-6 h-6 mr-2">
-            <p class="text-sm text-gray-600">Address: 226 Sitio Toto Cupang Proper Balanga City Bataan</p>
+            <img src="images/address2.png" alt="User Icon" class="w-6 h-6 mr-2">
+            <p class="text-sm text-white-600">Address: 226 Sitio Toto Cupang Proper Balanga City Bataan</p>
         </div>
         <button class="block w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none" onclick="showModal('Kobie')">See More</button>
     </div>
