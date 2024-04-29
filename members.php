@@ -497,7 +497,8 @@
         </div>
         <div class="flex items-center justify-center mb-4">
             <img src="images/address.png" alt="User Icon" class="w-6 h-6 mr-2">
-            <p class="text-sm text-gray-600">Address: Balanga, Bataan</p>
+            <p class="text-sm text-gray-600">150 Masinop St Cupang West Balanga City Bataan
+</p>
         </div>
         <button class="block w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none" onclick="showModal('Jarielle')">See More</button>
     </div>
